@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Paw Adoption</string>
+    <string name="title_activity_empezar">EmpezarActivity</string>
+    <string name="empezar">Empezar</string>
+    <string name="logo">Logotipo de la aplicación</string>
+
+    <!-- MainActivity -->
+    <string name="title_app">PawAdoption</string>
+
+    <!-- Onboardings -->
+    <string name="o1_titulo">Encuentra a tu mejor amigo</string>
+    <string name="o1_parrafo">Conecta con increíbles peluditos listos para recibir amor</string>
+    <string name="o2_titulo">Explora los refugios más cercanos</string>
+    <string name="o2_parrafo">Conecta con albergues locales y conoce a sus rescatados.</string>
+    <string name="o3_titulo">Compra y dona</string>
+    <string name="o3_parrafo">Descripcion3</string>
+    <string name="skip">Saltar</string>
+    <string name="title_activity_on_boarding1">OnBoarding1</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_onboarding2">Onboarding2</string>
+    <string name="title_activity_mascotas">MascotasActivity</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_welcome_kicker">Bienvenido</string>
+    <string name="dashboard_subtitle">Agranda tu familia con una mascota</string>
+    <string name="dashboard_action_btn">Adopta ahora</string>
+    <string name="dashboard_item_pets_title">Mascotas</string>
+    <string name="dashboard_item_refugio_title">Refugios</string>
+    <string name="dashboard_item_solicitudes_title">Solicitudes</string>
+    <string name="dashboard_item_store_title">Tienda</string>
+    <string name="dashboard_item_donacion_title">Donar</string>
+    <string name="bottom_nav_home">Inicio</string>
+    <string name="bottom_nav_store">Tienda</string>
+    <string name="bottom_nav_cart">Carrito</string>
+    <string name="bottom_nav_more">Más</string>
+    <string name="bottom_nav_pet">Adopta</string>
+    <string name="dashboard_greeting">¡Hola, Luz!</string>
+    <string name="dashboard_welcome_back">Bienvenida de nuevo</string>
+    <string name="dashboard_pregunta">¿Qué quieres hacer hoy?</string>
+    <string name="dashboard_mostrar_mas">Mostrar más</string>
+    <string name="dashboard_mascotas_disp">En adopción</string>
+    <string name="dashboard_card1_titulo">Max</string>
+    <string name="dashboard_edad1">5 años</string>
+    <string name="dashboard_card2_titulo">Nina</string>
+    <string name="dashboard_edad2">2 años</string>
+    <string name="title_activity_refugios">RefugiosActivity</string>
+    <string name="dashboard_title_voluntariado">Voluntario</string>
+    <string name="title_activity_voluntariado">VoluntariadoActivity</string>
+
+</resources>
