@@ -39,6 +39,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.luz.proyectoadopt.components.OnBoardingScreen
 import com.luz.proyectoadopt.ui.theme.AppTheme
 import com.luz.proyectoadopt.ui.theme.ProyectoAdoptTheme
 
@@ -48,94 +49,18 @@ class Onboarding2 : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ProyectoAdoptTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.primary
-                ) {
-                    OnScreen2(
-                        onSkipClick = {
-                            startActivity(Intent(this, DashboardActivity::class.java))
-                        },
-                        onNextClick = {
-                            startActivity(Intent(this, DashboardActivity::class.java))
-                        }
-                    )
-                }
-            }
-        }
-    }
-}
+                OnBoardingScreen(
+                    onSkipClick = {
+                        startActivity(Intent(this, DashboardActivity::class.java))
+                    },
+                    onNextClick = {
+                        startActivity(Intent(this, DashboardActivity::class.java))
+                    },
+                    image = R.drawable.on2_img,
+                    title = R.string.o2_titulo,
+                    parrafo = R.string.o2_parrafo
+                )
 
-
-@Composable
-fun OnScreen2(
-    onSkipClick: () -> Unit,
-    onNextClick: () -> Unit
-) {
-    Column(
-        modifier = Modifier.fillMaxSize()
-            .padding(AppTheme.spacing.regular)
-            .navigationBarsPadding(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceBetween
-    ) {
-        Column (
-            modifier = Modifier.fillMaxWidth().fillMaxHeight(0.6f),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Image(painter = painterResource(R.drawable.on2_img),
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize()
-                    .padding(top = AppTheme.spacing.extraLarge))
-        }
-        Column(modifier = Modifier.fillMaxWidth()
-            .padding(horizontal = AppTheme.spacing.large),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = stringResource(R.string.o2_titulo),
-                style = MaterialTheme.typography.titleLarge,
-                textAlign = TextAlign.Center
-            )
-            Spacer(modifier = Modifier.height(AppTheme.spacing.regular))
-            Text(
-                text = stringResource(R.string.o2_parrafo),
-                style = MaterialTheme.typography.bodyLarge,
-                textAlign = TextAlign.Center
-            )
-        }
-        Spacer(modifier = Modifier.height(72.dp))
-        Row(modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            TextButton(
-                onClick = onSkipClick
-            ) {
-                Text(
-                    text = stringResource(R.string.skip),
-                    style = MaterialTheme.typography.labelLarge,
-                    color = MaterialTheme.colorScheme.onPrimary
-                )
-            }
-            Box(
-                modifier = Modifier.height(10.dp)
-                    .fillMaxWidth(0.2f)
-                    .clip(RoundedCornerShape(percent = 50))
-                    .background(color = MaterialTheme.colorScheme.secondary)
-            )
-            FilledTonalIconButton(
-                onClick = onNextClick,
-                colors = IconButtonDefaults.filledIconButtonColors(
-                    containerColor = MaterialTheme.colorScheme.tertiary,
-                    contentColor = MaterialTheme.colorScheme.onTertiary
-                )
-            ) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-                    contentDescription = null
-                )
             }
         }
     }

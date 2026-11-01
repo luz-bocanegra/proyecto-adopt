@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.luz.proyectoadopt.ui.theme.AppTheme
 import com.luz.proyectoadopt.DashboardActivity
+import com.luz.proyectoadopt.components.OnBoardingScreen
 import com.luz.proyectoadopt.ui.theme.ProyectoAdoptTheme
 import kotlin.math.round
 
@@ -53,19 +54,17 @@ class OnBoarding1 : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ProyectoAdoptTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.primary
-                ) {
-                    OnScreen1(
-                        onSkipClick = {
-                            startActivity(Intent(this, DashboardActivity::class.java))
-                        },
-                        onNextClick = {
-                            startActivity(Intent(this, Onboarding2::class.java))
-                        }
-                    )
-                }
+                OnBoardingScreen(
+                    onSkipClick = {
+                        startActivity(Intent(this, DashboardActivity::class.java))
+                    },
+                    onNextClick = {
+                        startActivity(Intent(this, Onboarding2::class.java))
+                    },
+                    image = R.drawable.on1_img,
+                    title = R.string.o1_titulo,
+                    parrafo = R.string.o1_parrafo
+                )
             }
         }
     }
