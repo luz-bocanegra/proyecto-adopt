@@ -30,6 +30,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.luz.proyectoadopt.components.Boton
+import com.luz.proyectoadopt.components.StyledCard
 import com.luz.proyectoadopt.models.Refugio
 import com.luz.proyectoadopt.ui.theme.AppTheme
 import kotlinx.coroutines.CoroutineScope
@@ -41,18 +43,14 @@ fun RefugioCard(
     refugio: Refugio,
     onVerMasClick: () -> Unit
 ) {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(AppTheme.spacing.medium),
-        colors = CardDefaults.cardColors(
-            containerColor = Color.White
-        )
-    ) {
-        Column(modifier = Modifier.padding(AppTheme.spacing.medium)) {
-            Box(modifier = Modifier
-                .fillMaxSize()
-                .aspectRatio(1.9f)
-                .clip(RoundedCornerShape(12.dp))) {
+    StyledCard(modifier = Modifier) {
+        Column() {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .aspectRatio(1.9f)
+                    .clip(RoundedCornerShape(12.dp))
+            ) {
                 Image(
                     painterResource(refugio.imagen),
                     contentDescription = "",
@@ -72,18 +70,12 @@ fun RefugioCard(
                 color = MaterialTheme.colorScheme.background.copy(0.5f)
             )
             Spacer(modifier = Modifier.height(AppTheme.spacing.regular))
-            Button(onClick = onVerMasClick,
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.tertiary
-                )
-                ) {
-                Text(
-                    text = "Ver más",
-                    style = MaterialTheme.typography.labelLarge,
-                    color = Color.White,
-
-                )
-            }
+            Boton(
+                click = onVerMasClick,
+                bgColor = MaterialTheme.colorScheme.tertiary,
+                texto = "Ver más",
+                frColor = Color.White
+            )
         }
     }
 }

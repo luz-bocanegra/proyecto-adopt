@@ -68,6 +68,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.luz.proyectoadopt.components.Boton
 import com.luz.proyectoadopt.components.PillCard
 import com.luz.proyectoadopt.screens.mascotas.MascotasActivity
 import com.luz.proyectoadopt.screens.refugios.RefugiosActivity
@@ -410,20 +411,12 @@ fun DashboardBanner(
                     color = Color.White
                 )
                 Spacer(modifier = Modifier.height(AppTheme.spacing.regular))
-                Button(
-                    onClick = {},
-                    contentPadding = PaddingValues(
-                        horizontal = AppTheme.spacing.regular,
-                        vertical = ButtonDefaults.ContentPadding.calculateTopPadding()
-                    ),
-                    modifier = Modifier.clip(RoundedCornerShape(percent = 50))
-                ) {
-                    Text(
-                        text = stringResource(R.string.dashboard_action_btn),
-                        style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.background
-                    )
-                }
+                Boton(
+                    click = {},
+                    bgColor = Color.White,
+                    texto = "Adopta ahora",
+                    frColor = MaterialTheme.colorScheme.background
+                )
             }
             Column(
                 modifier = Modifier.height(250.dp)) {

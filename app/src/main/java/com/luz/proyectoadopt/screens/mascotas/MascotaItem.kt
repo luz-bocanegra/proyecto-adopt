@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import com.luz.proyectoadopt.components.StyledCard
 import com.luz.proyectoadopt.models.Mascota
 import com.luz.proyectoadopt.ui.theme.AppTheme
 
@@ -21,15 +22,8 @@ fun MascotaCard(
     mascota: Mascota,
     modifier: Modifier = Modifier
 ) {
-    Card (
-        modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(AppTheme.spacing.medium),
-        colors = CardDefaults.elevatedCardColors(
-            containerColor = Color.White
-        )
-    ) {
-        Column(modifier = Modifier.padding(AppTheme.spacing.regular),
-            verticalArrangement = Arrangement.spacedBy(AppTheme.spacing.extraSmall)) {
+    StyledCard(modifier = modifier){
+        Column(verticalArrangement = Arrangement.spacedBy(AppTheme.spacing.extraSmall)) {
             Text(
                 text = mascota.nombre,
                 style = MaterialTheme.typography.titleSmall,
