@@ -46,6 +46,7 @@ import com.luz.proyectoadopt.ui.theme.ProyectoAdoptTheme
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import com.luz.proyectoadopt.components.TopBar
 
 private val refugios = listOf(
     Refugio(
@@ -113,29 +114,10 @@ fun RefugiosScreen(onBackClick: () -> Unit) {
         modifier = Modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.primary,
         topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        "Refugios",
-                        style = MaterialTheme.typography.titleLarge,
-                        color = MaterialTheme.colorScheme.tertiary
-                    )
-                },
-                navigationIcon = {
-                    IconButton(
-                        onClick = onBackClick,
-                        colors = IconButtonDefaults.iconButtonColors(
-                            containerColor = MaterialTheme.colorScheme.tertiary
-                        )
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
-                            contentDescription = "Volver"
-                        )
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent)
-            )
+            TopBar(
+                onBackClick = onBackClick,
+                title = "Refugios",
+                subtitle = "Guía")
         }
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {

@@ -45,6 +45,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.luz.proyectoadopt.components.TopBar
 import com.luz.proyectoadopt.models.Mascota
 import com.luz.proyectoadopt.ui.theme.ProyectoAdoptTheme
 import com.luz.proyectoadopt.ui.theme.AppTheme
@@ -78,33 +79,10 @@ fun MascotasScreen(
     Scaffold(modifier = Modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.primary,
         topBar = {
-            TopAppBar(
-                title = {
-                    Column() {
-                        Text(
-                            "Mascotas",
-                            style = MaterialTheme.typography.titleLarge,
-                            color = MaterialTheme.colorScheme.tertiary
-                        )
-                        Text(
-                            "Directorio",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.background.copy(0.7f)
-                        )
-                    }
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBackClick,
-                        colors = IconButtonDefaults.iconButtonColors(
-                            contentColor = MaterialTheme.colorScheme.tertiary
-                        )
-                        ) {
-                        Icon(imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
-                            contentDescription = "Volver")
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent)
-            )
+            TopBar(
+                onBackClick = onBackClick,
+                title = "Mascotas",
+                subtitle = "Directorio")
         }
     ) { innerPadding ->
         Box(modifier = Modifier

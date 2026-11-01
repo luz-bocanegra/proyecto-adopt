@@ -68,6 +68,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.luz.proyectoadopt.components.PillCard
 import com.luz.proyectoadopt.screens.mascotas.MascotasActivity
 import com.luz.proyectoadopt.screens.refugios.RefugiosActivity
 import com.luz.proyectoadopt.ui.theme.AppTheme
@@ -282,7 +283,11 @@ fun DashboardScreen(
                 items( items = dashboardModules,
                     key = {it.titleRes}
                 ) {
-                    module -> ModuleCard(module, onNavigate = { onNavigate(module.route) })
+                    module ->
+                    PillCard(
+                        module = module,
+                        onNavigate = { onNavigate(module.route) }
+                    )
                 }
             }
             Spacer(modifier = Modifier.height(AppTheme.spacing.medium))
@@ -429,48 +434,7 @@ fun DashboardBanner(
     }
 }
 
-@Composable
-fun ModuleCard(
-    module: DashboardModule,
-    onNavigate: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Card (
-        onClick = onNavigate,
-        modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(percent = 50),
-        colors = CardDefaults.cardColors(
-            containerColor = Color.White,
-            contentColor = MaterialTheme.colorScheme.background
-        )
-    ) {
-        Row( modifier = Modifier.fillMaxWidth()
-            .padding(AppTheme.spacing.extraSmall),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Start) {
-            Box(modifier = Modifier.size(AppTheme.sizes.iconContainerMedium)
-                .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.tertiary.copy(0.5f)),
-                contentAlignment = Alignment.Center
-                ) {
-                Icon(
-                    imageVector = module.icon,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.background,
-                    modifier = Modifier.size(AppTheme.sizes.iconRegular)
-                )
-            }
-            Text(
-                stringResource(module.titleRes),
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.background,
-                maxLines = 1, minLines = 1,
-                modifier = Modifier.padding(start = AppTheme.spacing.small)
-            )
-        }
-    }
-}
+
 
 @Composable
 fun DashboardBottomNavigation(
